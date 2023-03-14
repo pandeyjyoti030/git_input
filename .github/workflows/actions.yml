@@ -1,6 +1,5 @@
 name: git_actions
 
-
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
@@ -27,13 +26,13 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
 
-    - name: Run the first script 
-    - run: |
-        cd file
-        python print.py
+      - name: Run the first script 
+      - run: |
+          cd file
+          python print.py
 
 
   job2:
@@ -42,10 +41,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4 
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4 
 
-    - name: run the second script
-    - run: |
-        cd file
-          python input.py $int
+      - name: run the second script
+      - run: |
+          cd file
+            python input.py $int
