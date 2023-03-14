@@ -19,32 +19,32 @@ env:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  # This workflow contains a single job
   job1:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v2
 
-      - name: Run the first script 
-      - run: |
+      # Runs a single command using the runners shell
+      - name: Run first script
+        run: |
           cd file
-          python print.py
-
+          python input.py $input1
 
   job2:
-    # The type of runner that the job will run on
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4 
-
-      - name: run the second script
-      - run: |
+      - uses: actions/setup-python@v2
+      
+      # Runs a single command using the runners shell
+      - name: Run second script
+        run: |
           cd file
-            python input.py $int
+          python print.py
